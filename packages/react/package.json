@@ -6,8 +6,8 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "clean": "rm -rf dist",
-    "prebuild": "npm run clean && rm -f src/index.ts || true",
-    "build": "tsup src/index.tsx --format esm,cjs --dts --clean", 
+    "prebuild": "npm run clean && find . -name 'index.ts' -delete || true",
+    "build": "tsup src/index.tsx --format esm,cjs --dts", 
     "dev": "tsup src/index.tsx --watch --dts", 
     "lint": "eslint src/**/*.ts* --fix"
   },
