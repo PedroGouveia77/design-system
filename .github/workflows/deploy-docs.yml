@@ -1,4 +1,4 @@
-name: Deploy Docs
+name: Deploy docs
 
 on:
   push:
@@ -10,34 +10,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
         with:
-          node-version: '20'
+          node-version: 16
 
-      - name: Install dependencies
-        run: npm ci
+      - run: npm ci
 
-      - name: Debug - Project Structure
-        run: |
-          pwd
-          ls -R
-          find . -name "index.ts" -o -name "index.tsx"
-
-      - name: Build React Package
-        working-directory: ./packages/react
-        run: npm run build
-
-      - name: Debug - Check React Package Dist
-        working-directory: ./packages/react
-        run: |
-          ls -la dist || true
-          cat dist/index.js || true
-
-      - name: Build Project
-        run: npm run build
+      - run: npm run build
 
       - name: Deploy storybook
         working-directory: ./packages/docs
