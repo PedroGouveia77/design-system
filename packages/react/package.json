@@ -5,6 +5,7 @@
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "scripts": {
+    "prebuild": "rm -f src/index.ts || true",
     "build": "tsup src/index.tsx --format esm,cjs --dts --clean", 
     "dev": "tsup src/index.tsx --watch --dts", 
     "lint": "eslint src/**/*.ts* --fix"
