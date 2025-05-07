@@ -1,13 +1,11 @@
 import { defineConfig } from 'tsup'
 
 export default defineConfig({
-  entry: ['src/index.tsx'],
+  entry: ['src/**/*.tsx'], // Aqui estamos especificando que todos os arquivos .tsx dentro de src devem ser usados
   format: ['esm', 'cjs'],
-  dts: {
-    resolve: true, // Garante que os tipos sejam resolvidos e incluídos no bundle
-  },
-  clean: true,
-  external: ['react'],
+  dts: true, // Geração de tipos
+  external: ['react', 'react-dom'], // Garanta que o React e o ReactDOM não sejam empacotados
+  clean: true, // Limpeza de arquivos de build antigos
   sourcemap: true,
   skipNodeModulesBundle: true,
   esbuildOptions(options) {
