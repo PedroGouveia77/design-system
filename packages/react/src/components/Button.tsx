@@ -1,5 +1,6 @@
-import { ComponentProps, ElementType } from 'react'
-import { styled } from '../styles'
+import { ComponentProps, ElementType } from 'react';
+import { styled } from '../styles';
+import { CSS } from '@stitches/react';
 
 export const Button = styled('button', {
   all: 'unset',
@@ -77,10 +78,11 @@ export const Button = styled('button', {
     variant: 'primary',
     size: 'md',
   },
-})
+}) as React.ComponentType<ComponentProps<'button'> & { css?: CSS }>;
+
 
 export interface ButtonProps extends ComponentProps<typeof Button> {
-  as?: ElementType
+  as?: ElementType;
 }
 
-Button.displayName = 'Button'
+Button.displayName = 'Button';
