@@ -5,10 +5,8 @@
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "scripts": {
-    "clean": "rm -rf dist",
-    "prebuild": "npm run clean && find . -name 'index.ts' -delete || true",
-    "build": "tsup src/index.tsx --format esm,cjs --dts", 
-    "dev": "tsup src/index.tsx --watch --dts", 
+    "build": "tsup src/index.tsx --format esm,cjs --external react",
+    "dev": "tsup src/index.tsx --format esm,cjs --dts --external react --watch",
     "lint": "eslint src/**/*.ts* --fix"
   },
   "keywords": [],
