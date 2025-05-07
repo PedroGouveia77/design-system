@@ -1,14 +1,18 @@
 {
     "private": true,
     "workspaces": [
-     "packages/*"
+        "packages/*"
     ],
     "scripts": {
-     "dev": "turbo run dev --parallel",
-     "build": "turbo run build"
+        "dev": "turbo run dev --parallel",
+        "build": "turbo run build",
+        "changeset": "changeset",
+        "version-packages": "changeset version",
+        "release": "turbo run build --filter=@pedrinho-ignite-ui/docs && changeset publish"
     },
     "devDependencies": {
-     "turbo": "^2.5.2"
+        "@changesets/cli": "^2.29.3",
+        "turbo": "^2.5.2"
     },
     "packageManager": "npm@10.9.2"
-   }
+}
