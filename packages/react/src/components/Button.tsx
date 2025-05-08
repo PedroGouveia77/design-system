@@ -1,6 +1,5 @@
-import { ComponentProps, ElementType } from 'react';
-import { styled } from '../styles';
-import { CSS } from '@stitches/react';
+import { ComponentProps, ElementType } from 'react'
+import { styled } from '../styles'
 
 export const Button = styled('button', {
   all: 'unset',
@@ -11,12 +10,14 @@ export const Button = styled('button', {
   textAlign: 'center',
   minWidth: 120,
   boxSizing: 'border-box',
+  padding: '0 $4',
+
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
   gap: '$2',
+
   cursor: 'pointer',
-  padding: '0 $3',
 
   svg: {
     width: '$4',
@@ -34,44 +35,51 @@ export const Button = styled('button', {
   variants: {
     variant: {
       primary: {
-        background: '$ignite500',
         color: '$white',
+        background: '$ignite500',
+
         '&:not(:disabled):hover': {
           background: '$ignite300',
         },
+
         '&:disabled': {
-          opacity: 0.6,
           backgroundColor: '$gray200',
         },
       },
+
       secondary: {
-        border: '2px solid $ignite500',
         color: '$ignite300',
+        border: '2px solid $ignite500',
+
         '&:not(:disabled):hover': {
           background: '$ignite500',
           color: '$white',
         },
+
         '&:disabled': {
-          opacity: 0.6,
-          backgroundColor: '$gray200',
+          color: '$gray200',
           borderColor: '$gray200',
         },
       },
+
       tertiary: {
         color: '$gray100',
+
         '&:not(:disabled):hover': {
           color: '$white',
         },
+
         '&:disabled': {
-          opacity: 0.6,
-          backgroundColor: '$gray600',
+          color: '$gray600',
         },
       },
     },
+
     size: {
       sm: {
         height: 38,
       },
+
       md: {
         height: 46,
       },
@@ -82,11 +90,10 @@ export const Button = styled('button', {
     variant: 'primary',
     size: 'md',
   },
-}) as React.ComponentType<ComponentProps<'button'> & { css?: CSS }>;
-
+})
 
 export interface ButtonProps extends ComponentProps<typeof Button> {
-  as?: ElementType;
+  as?: ElementType
 }
 
-Button.displayName = 'Button';
+Button.displayName = 'Button'

@@ -21,7 +21,8 @@
     "@types/react-dom": "^19.1.2",
     "react": "^19.1.0",
     "tsup": "^8.4.0",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "@stitches/react": "^1.2.8"
   },
   "dependencies": {
     "@pedrinho-ignite-ui/tokens": "*",

@@ -1,29 +1,26 @@
 import type { Meta, StoryObj } from '@storybook/react'
-
-import { Avatar, AvatarProps } from '@pedrinho-ignite-ui/react'
+import { Avatar, AvatarProps } from '../../../react/src/index'
 
 export default {
-    title: 'Data Display/Avatar',
-    component: Avatar,
-    args: {
-        src: 'https://pbs.twimg.com/profile_images/1793391535041433601/OaITfKQW_400x400.jpg',
-        alt: 'Pedro Gouveia'
+  title: 'Data display/Avatar',
+  component: Avatar,
+  args: {
+    src: 'https://github.com/diego3g.png',
+    alt: 'Diego Fernandes',
+  },
+  argTypes: {
+    src: {
+      control: {
+        type: 'text',
+      },
     },
-    argTypes: {
-        src: {
-            control: {
-                type: 'text',
-            },
-        },
-    },
+  },
 } as Meta<AvatarProps>
 
-export const PrimaryAvatar: StoryObj<AvatarProps> = {}
+export const Primary: StoryObj<AvatarProps> = {}
 
 export const WithFallback: StoryObj<AvatarProps> = {
-    args: {
-        src: undefined,
-    }
+  args: {
+    src: undefined,
+  },
 }
-
-

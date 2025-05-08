@@ -1,5 +1,14 @@
 {
   "extends": "@ignite-ui/ts-config/react.json",
-  "include": ["src"],
-  "exclude": ["node_modules", "dist"]
-} 
+  "include": ["src", "src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["node_modules", "dist"],
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "paths": {
+      "@stitches/react": ["./node_modules/@stitches/react"]
+    }
+  }
+}

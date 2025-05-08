@@ -1,6 +1,4 @@
-import { styled } from '../../styles';
-import { CSS } from '@stitches/react';
-import { ComponentProps, ElementType } from 'react';
+import { styled } from '../../styles'
 
 export const TextInputContainer = styled('div', {
   backgroundColor: '$gray900',
@@ -33,14 +31,14 @@ export const TextInputContainer = styled('div', {
   defaultVariants: {
     size: 'md',
   },
-}) as React.ComponentType<ComponentProps<'div'> & { css?: CSS }>;
+})
 
 export const Prefix = styled('span', {
   fontFamily: '$default',
   fontSize: '$sm',
   color: '$gray400',
   fontWeight: 'regular',
-}) as React.ComponentType<ComponentProps<'span'> & { css?: CSS }>;
+})
 
 export const Input = styled('input', {
   fontFamily: '$default',
@@ -62,23 +60,4 @@ export const Input = styled('input', {
   '&::placeholder': {
     color: '$gray400',
   },
-}) as React.ComponentType<ComponentProps<'input'> & { css?: CSS }>;
-
-
-export interface TextInputContainerProps extends ComponentProps<typeof TextInputContainer> {
-  as?: ElementType;
-}
-
-TextInputContainer.displayName = 'TextInputContainer';
-
-export interface PrefixProps extends ComponentProps<typeof Prefix> {
-  as?: ElementType;
-}
-
-Prefix.displayName = 'Prefix';
-
-export interface InputProps extends ComponentProps<typeof Input> {
-  as?: ElementType;
-}
-
-Input.displayName = 'Input';
+})
